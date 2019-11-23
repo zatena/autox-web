@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
+    case_list = case_result[i]
+IndexError: list index out of range

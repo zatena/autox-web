@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试平台</title>
+    <link href= "{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+    <style>
+        input::-webkit-input-placeholder {
+            color: #aab2bd;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align:center">
+    <font></font><br/><font></font><br/><font></font><br/>
+{#    <font face="宋体" size="+6" color="#B0E0E6">自动化测试平台</font>#}
+    <br/>
+    <font></font><br/>
+    <font></font><br/>
+
+    <form action='http://127.0.0.1:5000/result' method='get'>
+        <input id="" type="text" rows="2" cols="60" placeholder="请输入测试场景，支持模糊搜索"
+               name='scenario_name' value="" style="height:55px; width:460px; border:2px solid #a1a1a1; border-radius:25px; font-size:20px">
+
+        <button type="submit" class="search-submit"
+                style="height:45px; width:60px; font-size:18px;" onclick="buildTest()">执行</button>
+    </form>
+</div>
+<script>
+
+    function buildTest(){
+        let scenarioName = $('input[name=scenario_name]').val();
+
+        $.ajax({
+            type: "GET",
+            {#url: "",#}
+            data: "scenario_name="+scenarioName,
+            dataType: 'json',
+            {#contentType: 'application/json;charset=UTF-8',#}
+            success: function (data) {
+                console.log(data)
+            },
+            error: function (data) {
+                console.log(data)
+
+            }
+        });
+    }
+</script>
+<br/>
+<br/>
+<br/>
+<table class="table" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr>
+        <td align="center" class="biaoti" height="60">场景列表(参考输入）</td>
+    </tr>
+</table>
+<table width="60%" border="1" cellspacing="1" cellpadding="4" bgcolor="#F0F8FF" class="tabtop13" align="center" style="table-layout:fixed; width:60%">
+    <tr>
+        <td width="20%" class="btbg font-center titfont" >测试场景</td>
+        <td width="80%" class="btbg font-center titfont" >场景描述</td>
+    </tr>
+    <tr>
+        <td colspan="1" class="font-center">招聘管理</td>
+        <td class="font-center" style="white-space:nowrap; text-overflow: ellipsis; overflow: hidden;"
+            title="包括发布职位、设置Hot、编辑职位，删除职位等操作">包括发布职位、设置Hot、编辑职位，删除职位等操作包括发布职位、设置Hot、编辑职位，删除职位等操作</td>
+    </tr>
+    <tr>
+        <td colspan="1" class="font-center">企业项目流程</td>
+        <td class="font-center" style="white-space:nowrap; text-overflow: ellipsis; overflow: hidden;"
+            title="包括发布企业项目，推送，报价，确认函，交付，确认，账期，付款，提现一系列完成操作，涉及后台和创意方前台。">完整的企业流程从发布到提现</td>
+    </tr>
+</table>
+
+</body>
+</html>
+
+

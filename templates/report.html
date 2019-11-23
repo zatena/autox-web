@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 带有下拉菜单的胶囊</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+{% extends "bootstrap/base.html"  %}
+{% block navbar %}
+    <p>带有下拉菜单的胶囊</p>
+<ul class="nav nav-pills">
+    <li class="active"><a href="#">官网</a></li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            项目流程 <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#">企业项目流程</a></li>
+            <li><a href="#">普通项目流程</a></li>
+            <li><a href="#">财务流程</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            创意方 <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="#">创意方入驻</a></li>
+            <li><a href="#">个人设置</a></li>
+            <li><a href="#">创意方案例</a></li>
+        </ul>
+    </li>
+    <li><a href="#">后台</a></li>
+    <li><a href="#">其他</a></li>
+</ul>
+
+
+{%- endblock navbar %}
+
+</body>
+</html>

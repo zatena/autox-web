@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>autox</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+
+    <script src="/static/js/jquery.min.js"></script>
+</head>
+<body bgcolor="#E6E6FA">
+<div style="text-align:center">
+    <font></font><br/><font></font><br/><font></font><br/>
+    <font face="宋体" size="+5" color="#B0C4DE">接口自动化测试平台</font><br/>
+    <font></font><br/>
+    <font></font><br/>
+    <form action='/search' method='post'>
+        <input type="text" rows="2" cols="60" placeholder="请输入测试场景或输入全部..."
+               name='scenario_name' style="height:40px; width:500px;">
+        <button type="submit" class="search-submit"
+                style="height:38px; width:60px;">执行</button>
+    </form>
+
+<script>
+    $(function(){
+        $("#btn").click(function(){
+            let scenario_name=$('#scenario_name').val();
+            let data= {
+                data: JSON.stringify({
+                    'scenario_name': scenario_name
+                }),
+            }
+            $.ajax({
+                url:'http://127.0.0.1:5000/search',
+                type:'POST',
+                data:data,
+                dataType: 'json',
+                contentType: 'application/json;charset=UTF-8',
+                success: function (data) {
+                    console.log(data)
+
+                },
+                error: function (data) {
+                    console.log(data);
+                    console.log(1)
+                }
+
+            })
+        })
+    })
+</script>
+</div>
+</body>
+</html>
+
+
