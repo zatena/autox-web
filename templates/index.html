@@ -1,53 +1,62 @@
-<!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>测试平台</title>
-    <link href= "{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
-    <style>
-        input::-webkit-input-placeholder {
-            color: #aab2bd;
-            font-size: 18px;
-        }
-    </style>
+<link>
+<meta charset="UTF-8">
+<title>测试平台</title>
+<script src="{{ url_for('static', filename='js/checkbox.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+<link href= "{{ url_for('static', filename='css/checkbox.css') }}" rel="stylesheet" type="text/css"/>
+<style>
+    input::-webkit-input-placeholder {
+        color: #aab2bd;
+        font-size: 18px;
+    }
+</style>
 </head>
 <body>
 <div style="text-align:center">
     <font></font><br/><font></font><br/><font></font><br/>
-{#    <font face="宋体" size="+6" color="#B0E0E6">自动化测试平台</font>#}
+    <font face="宋体" size="+6" color="#B0E0E6">自动化测试平台</font>
     <br/>
     <font></font><br/>
     <font></font><br/>
 
-    <form action='http://127.0.0.1:5000/result' method='get'>
-        <input id="" type="text" rows="2" cols="60" placeholder="请输入测试场景，支持模糊搜索"
-               name='scenario_name' value="" style="height:55px; width:460px; border:2px solid #a1a1a1; border-radius:25px; font-size:20px">
-
+    <form action="/result" method='post'>
+        <p><input type="checkbox" name="category" value="招聘管理" />招聘管理 </p>
+        <p><input type="checkbox" name="category" value="企业项目流程" />企业项目流程</p>
         <button type="submit" class="search-submit"
                 style="height:45px; width:60px; font-size:18px;" onclick="buildTest()">执行</button>
+
     </form>
 </div>
 <script>
 
     function buildTest(){
-        let scenarioName = $('input[name=scenario_name]').val();
+        var data = {
+            data: JSON.stringify({'scenario': ["招聘管理", "企业项目流程"]})
+        }
 
         $.ajax({
-            type: "GET",
-            {#url: "",#}
-            data: "scenario_name="+scenarioName,
-            dataType: 'json',
-            {#contentType: 'application/json;charset=UTF-8',#}
-            success: function (data) {
-                console.log(data)
+            type: "POST",
+            url:  "/result",
+            data: data,
+            dataType:'json',
+            contentType: 'application/json; charset=UTF-8',
+            headers: {
+                "Content-Type": "application/json;charset=utf-8"
             },
-            error: function (data) {
-                console.log(data)
+            success:function(res){
+                console.log(res)
+
+            },
+            error:function (res) {
+                console.log(res)
 
             }
         });
     }
 </script>
+
 <br/>
 <br/>
 <br/>
