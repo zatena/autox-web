@@ -1,15 +1,17 @@
 @charset "utf-8";
 /* CSS Document */
+
 .tabtop13 {
     margin-top: 13px;
+    border: 1px solid #ccc;
 }
 .tabtop13 td{
-    background-color:#ffffff;
+    /*background-color:#DCDCDC;*/
     /*height:25px;*/
     /*line-height:150%;*/
 }
 .font-center{ text-align:center}
-.btbg{background:#e9faff !important;}
+.btbg{background:#DCDCDC !important;}
 .btbg1{background:#f2fbfe !important;}
 .btbg2{background:#f3f3f3 !important;}
 .biaoti{
@@ -19,7 +21,6 @@
     border-bottom:1px dashed #CCCCCC;
     color: #255e95;
 }
-
 .mainbiaoti{
     font-family: 微软雅黑;
     font-size: 45px;
@@ -29,12 +30,12 @@
 }
 .titfont {
 
-    font-family: 微软雅黑;
+    font-family: arial;
     font-size: 16px;
     font-weight: bold;
-    color: #255e95;
-    background: url(../images/ico3.gif) no-repeat 15px center;
-    background-color:#e9faff;
+    color: #FFFFFF;
+    background-color: #13bbbd;
+
 }
 .tabtxt2 {
     font-family: 微软雅黑;
@@ -81,3 +82,69 @@
     overflow: hidden;
     cursor: pointer;
 }
+
+.btn-primary{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    margin: 0 auto;
+    display: block;
+}
+
+. my-form .form-group{
+    text-align: left;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-col-6 {
+    flex: 0 0 160px;
+    width: 160px;
+    margin:0;
+}
+.flex-col-8 {
+    flex: 1 1;
+}
+
+.btn-primary {
+    color:#fff;
+    background-color:#13bbbd;
+    border-color:#1AB394;
+    font: 24px arial,sans-serif;
+    position: relative;
+}
+
+.backBtn {
+    float:left;
+    color:#fff;
+    background-color:#13bbbd;
+    border-color:#1AB394;
+    font: 18px arial,sans-serif;
+}
+
+.addBtn {
+    width: 35%;
+    margin-top: 35px;
+    margin-left:10px;
+    float:right;
+    color:#fff;
+    background-color:#13bbbd;
+    border-color:#1AB394;
+    font: 18px arial,sans-serif;
+
+}
+
+.hotBtn {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack:justify;
+    justify-content: space-between;
+    margin-top: 24px;
+   }
+
+.fa-envelope-o:before{content:"\f003"}

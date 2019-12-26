@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 静态控件</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+</head>
+<body>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>Autox平台</h1>
+    <p>自动化测试从这里开始</p>
+</div>
+<form class="form-horizontal" role="form" id="addForm">
+    <div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" style="margin-top: 24px">平台</label>
+            <div class="col-sm-10">
+                <p class="form-control-static" style="margin-top: 24px"><b>供给平台</b></p>
+            </div>
+        </div>
+        <div class="form-group" class="col-sm-10">
+            <label for="name" class="col-sm-2 control-label">环境配置</label>
+            <div class="col-sm-10">
+                <select class="form-control">
+                    <option>默认选项</option>
+                    <option>预发布环境</option>
+                    <option>测试环境</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">测试集</label>
+            <div class="col-sm-10">
+                <select class="form-control">
+                    <option>默认选项</option>
+                    <option>企业项目流程</option>
+                    <option>普通项目流程</option>
+                    <option>特赞优选人才库</option>
+                    <option>创意方分享组</option>
+                    <option>案例分享组</option>
+                    <option>设计师前台</option>
+                    <option>财务管理</option>
+                    <option>招聘管理</option>
+                    <option>AC Dashboard</option>
+                    <option>TP Dashboard</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="casename" class="col-sm-2 control-label">用例名称</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="casename" placeholder="请输入用例名称">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="method" class="col-sm-2 control-label">请求方法</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="method" placeholder="post or get">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="url" class="col-sm-2 control-label">请求地址</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="url" placeholder="请输入请求地址">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="data" class="col-sm-2 control-label">请求数据</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="data" placeholder="请输入请求数据">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="assert" class="col-sm-2 control-label">判断条件</label>
+            <div class="col-sm-10">
+                <input class="form-control" id="assert" placeholder="请输入预判条件，参考格式：用例名称.位置.响应字段:预期响应值">
+            </div>
+        </div>
+        <div class="hotBtn">
+
+{#            <a href="/index"><button class="btn btn-large btn-primary">返回上一页</button></a>#}
+
+            <input type="button" name="back" class="btn btn-large btn-primary"  value ="返回主页" onclick="window.location.href='index'"/>
+            <button id="add" form="addForm" class="btn btn-large btn-primary" style="" type="button">
+                添加
+            </button>
+
+
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

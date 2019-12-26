@@ -1,88 +1,131 @@
-
-<html lang="en">
-<link>
-<meta charset="UTF-8">
-<title>测试平台</title>
-<script src="{{ url_for('static', filename='js/checkbox.js') }}"></script>
-<script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
-<link href= "{{ url_for('static', filename='css/checkbox.css') }}" rel="stylesheet" type="text/css"/>
-<style>
-    input::-webkit-input-placeholder {
-        color: #aab2bd;
-        font-size: 18px;
-    }
-</style>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Autox</title>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../static/js/bootstrap-select.min.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
 </head>
 <body>
-<div style="text-align:center">
-    <font></font><br/><font></font><br/><font></font><br/>
-    <font face="宋体" size="+6" color="#B0E0E6">自动化测试平台</font>
-    <br/>
-    <font></font><br/>
-    <font></font><br/>
-
-    <form action="/result" method='post'>
-        <p><input type="checkbox" name="category" value="招聘管理" />招聘管理 </p>
-        <p><input type="checkbox" name="category" value="企业项目流程" />企业项目流程</p>
-        <button type="submit" class="search-submit"
-                style="height:45px; width:60px; font-size:18px;" onclick="buildTest()">执行</button>
-
-    </form>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>Autox平台</h1>
+    <p>自动化测试从这里开始</p>
 </div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">欢迎</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">主页</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        用例管理 <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/case">用例</a></li>
+                        <li><a href="#">用例集</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">环境变量</a></li>
+                    </ul>
+                </li>
+                <li><a href="/set">配置管理</a></li>
+                <li><a href="/result">结果管理</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>请选择测试集</h2>
+            <h5>根据需要选择测试环境和用例集</h5>
+            <div>
+                <form id="userTypeForm" class="form-horizontal" action="/result">
+                    <div class="form-group">
+                        <h4><label class="col-sm-2 control-label" style="margin-top: 12px;">环境配置：</label></h4>
+                        <div class="col-sm-8" style="margin-top: 12px">
+                            <select class="form-control">
+                                <option>预发布环境</option>
+                                <option>测试环境</option>
+                                <option>线上环境（谨慎选择）</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h4><label class="col-sm-2 control-label" style="margin-top: 12px;">用例集合：</label></h4>
+                        <div class="col-sm-8" style="margin-top: 12px">
+                            <select id="userType" class="selectpicker show-tick form-control" style="text-align: center; margin-top: 3px" multiple data-live-search="false">
+                                <option value="招聘管理">招聘管理</option>
+                                <option value="企业项目流程">企业项目流程</option>
+                                <option value="案例分享组">案例分享组</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input id = "hidden" type="hidden" value="" name="hidden"/>
+                    <button id="userType" class="btn btn-large btn-primary" style="margin-top: 4px;" type="submit">
+                        生成报告
+                    </button>
+                </form>
+            </div>
+            <div class="col-sm-8">
+                <h2>Autox介绍</h2>
+                <h5>简单功能描述</h5>
+                <p>一些文本..</p>
+                <br>
+            </div>
+            <div>
+                <h2>Git链接</h2>
+                <p style="text-align: left">⏬&nbsp;⏬&nbsp;⏬&nbsp;⏬&nbsp;⏬</p>
+                <ul>
+                    <li class="active"><a href="https://github.com/zatena/autox.git">autox backend</a></li>
+                    <li><a href="https://github.com/zatena/autox-web.git">autox frontend</a></li>
+                </ul>
+                <hr class="hidden-sm hidden-md hidden-lg">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="footer">
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <p>欢迎使用Autox，任何意见请联系我</p>
+            <div>
+                <h24>Email</h24>
+            </div>
+            <h12>zhengjingjing@tezign.com</h12>
+
+    </div>
+</div>
+
 <script>
+    document.getElementById("userTypeForm").onsubmit = function () {
+        let testList = $("#userType").val();
+        document.getElementById("hidden").value = testList;
+    }
 
-    function buildTest(){
-        var data = {
-            data: JSON.stringify({'scenario': ["招聘管理", "企业项目流程"]})
-        }
-
-        $.ajax({
-            type: "POST",
-            url:  "/result",
-            data: data,
-            dataType:'json',
-            contentType: 'application/json; charset=UTF-8',
-            headers: {
-                "Content-Type": "application/json;charset=utf-8"
-            },
-            success:function(res){
-                console.log(res)
-
-            },
-            error:function (res) {
-                console.log(res)
-
-            }
-        });
+    if(window.name != "bencalie"){
+        location.reload();
+        window.name = "bencalie";
+    }
+    else{
+        window.name = "";
     }
 </script>
-
-<br/>
-<br/>
-<br/>
-<table class="table" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-    <tr>
-        <td align="center" class="biaoti" height="60">场景列表(参考输入）</td>
-    </tr>
-</table>
-<table width="60%" border="1" cellspacing="1" cellpadding="4" bgcolor="#F0F8FF" class="tabtop13" align="center" style="table-layout:fixed; width:60%">
-    <tr>
-        <td width="20%" class="btbg font-center titfont" >测试场景</td>
-        <td width="80%" class="btbg font-center titfont" >场景描述</td>
-    </tr>
-    <tr>
-        <td colspan="1" class="font-center">招聘管理</td>
-        <td class="font-center" style="white-space:nowrap; text-overflow: ellipsis; overflow: hidden;"
-            title="包括发布职位、设置Hot、编辑职位，删除职位等操作">包括发布职位、设置Hot、编辑职位，删除职位等操作包括发布职位、设置Hot、编辑职位，删除职位等操作</td>
-    </tr>
-    <tr>
-        <td colspan="1" class="font-center">企业项目流程</td>
-        <td class="font-center" style="white-space:nowrap; text-overflow: ellipsis; overflow: hidden;"
-            title="包括发布企业项目，推送，报价，确认函，交付，确认，账期，付款，提现一系列完成操作，涉及后台和创意方前台。">完整的企业流程从发布到提现</td>
-    </tr>
-</table>
-
 </body>
 </html>
-
-

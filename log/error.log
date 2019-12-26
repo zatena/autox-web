@@ -1,40 +1,40 @@
 Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 245, in build_report
+    test_report = self.execute_case(scenario_list, excReport)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 238, in execute_case
+    report_model = mm.ReportModel(summary_report, report_title, case_all_count, pass_result,
+UnboundLocalError: local variable 'summary_report' referenced before assignment
 Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/core/myrequest.py", line 66, in get_message
+    result = requests.get(url, data, headers=headers, timeout=15)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1270, in _send_request
+    self.putheader(hdr, value)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1202, in putheader
+    values[i] = one_value.encode('latin-1')
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 0-5: ordinal not in range(256)
 Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 222, in execute_case
+    run_time = str(actual_response['run_time']) + 'ms'
+TypeError: 'NoneType' object is not subscriptable
 Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 99, in execute_case
-    case_list = case_result[i]
-IndexError: list index out of range
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 245, in build_report
+    test_report = self.execute_case(scenario_list, excReport)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/autox/util/common.py", line 238, in execute_case
+    report_model = mm.ReportModel(summary_report, report_title, case_all_count, pass_result,
+UnboundLocalError: local variable 'summary_report' referenced before assignment
