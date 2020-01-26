@@ -1,11 +1,10 @@
 from flask import Flask,  url_for
-from flask import render_template, render_template_string
-from flask import request, redirect, make_response, jsonify
+from flask import render_template
+from flask import request, redirect
 from autox import run
 import os
-import json
 from shutil import copy
-# from flask_bootstrap import Bootstrap
+from collections import OrderedDict
 
 app = Flask(__name__)
 
@@ -27,9 +26,24 @@ def env_config():
     return render_template("envConfig.html")
 
 
-@app.route('/case', methods=['GET'])
+@app.route('/addcase', methods=['GET', 'POST'])
 def case_add():
-    return render_template("case.html")
+    if request.method == 'GET':
+        return render_template("addcase.html")
+    else:
+        caseName = request.form.get('caseName')
+        runSystem = request.form.get('runSystem')
+        runEnv = request.form.get('runEnv')
+        caseSet = request.form.get('caseSet')
+        method = request.form.get('method')
+        url = request.form.get('url')
+        assertResult = request.form.get('assertResult')
+        body = request.form.get('body')
+
+
+@app.route('/caselist', methods=['GET'])
+def case_list():
+    return render_template("caselist.html")
 
 
 @app.route('/set', methods=['GET'])
@@ -54,3 +68,4 @@ def search():
 
 if __name__ == '__main__':
     app.run()
+
